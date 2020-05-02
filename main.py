@@ -1,11 +1,11 @@
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import messagebox
 from pySnow import *
 import ctypes
 from ctypes import *
 
 #加载c++动态库
-dll = ctypes.cdll.LoadLibrary('SnowC.dll')
+dll = ctypes.cdll.LoadLibrary("E:\\Pycharmproject\\se2020.2.0\\se2020-1\\SnowC.dll")
 
 
 #界面
