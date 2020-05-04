@@ -9,7 +9,7 @@
 * （4）点击界面的右边的sin_error，cos-error,tan-error,cot-error即可分别自动输入1000次数据并计算误差。
 ![image](math/tu4.png)
 * （5）点击界面的清除按钮，可清除在界面窗口执行的操作；点击退出按钮，可直接退出整个界面。  
-![image](https://github.com/yangyuxue-cqu/se2020/blob/master/math/tu3.png)
+![image](math/tu3.png)
 
 
 
