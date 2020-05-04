@@ -22,31 +22,47 @@
 * （6）testmain.py主要实现了三角函数运算测试与原三角函数计算函数的界面(v2.0)显示（python语言）。
 ### 后台
 * 界面尺寸、标题
-      ```python   
-      python window = tk.Tk()
-      window.title("trigonometric function")
-      window.geometry("480x400")
-      ```
+```python
+    window = tk.Tk()
+    window.title("Welcome to Snow Calculator")
+    window.geometry("620x400")
+```
+    
          
-* 输入变量
-         
-      ```python
-      e.get()   
-      ```
-         三角函数值输出
-      ```python
+* 输入界面 角度
+```python
+var_angle_input = tk.StringVar()
+entry_angle_input = tk.Entry(window,
+                             textvariable=var_angle_input,
+                             width=8,bg="tan")
+entry_angle_input.place(x=160, y=40)
+```
+* 弧度输入
+```python
+def get_num():
+    if (entry_angle_input.get() == ""):
+        tk.messagebox.showwarning(title='Warning', message='PLEASE INPUT A NUMBER！')
+        angle_value = float(entry_angle_input.get())
+    else:
+        angle_value = float(entry_angle_input.get())
+
+    o = angle_value
+    while angle_value > 360:
+    	angle_value = angle_value - 360
+    angle_value = angle_value * PI / 180
+
+    return angle_value, o
+```
+* 三角函数值输出
+```python
       t.insert("end", result)
-      ```
+```
          
 * 界面按钮，例如
-     
-     ```python
-      tk.Button(window,
-                  text="sin",
-                  width=15,height=2,
-                  width=15, height=1,
-                  command=compute_sin)
-     ```
+```python
+btn_sin = tk.Button(window, text='sin',
+                    width=8, height=2,command=snow_sin).place(x=30, y=90)
+```
      
      
      
@@ -54,7 +70,7 @@
 
   sin计算
   
-      ```python
+```python
   def snow_sin():
   	var,_ = get_num()
   	if flag:
@@ -64,11 +80,11 @@
   	else:
   		result = sin(var)
   	var_sin_result.set("%.7f" % result)
-      ```
+```
   
   
   
-  ```c++
+```c++
   DLL_EXPORT double c_sin(double x)
       {
         int i = 1, negation = 1;//取反
@@ -87,13 +103,13 @@
           } while (myabs(sum) > 1e-15);
           return (TaylorExpansion);
       }
-  ```
+```
   
   
   
   cos计算
   
-  ```python
+```python
   def snow_cos():
   	var,_ = get_num()
   	if flag:
@@ -102,17 +118,17 @@
   	else:
   		result = cos(var)
   	var_cos_result.set("%.7f" % result)
-  ```
+```
   
   
   
-  ```c++
+```c++
   DLL_EXPORT double c_cos(double x)
       {
           x = (PI / 2) - x;
           return c_sin(x);
       }
-  ```
+```
   
 
 
@@ -172,3 +188,27 @@ DLL_EXPORT double c_cot(double x)
 }
 ```
 
+* 计算三角函数的误差（以sin函数为例）
+sin误差计算
+```python
+def test_sin():
+    num_test = 0
+    count_sin = 0
+    while num_test<1000:
+        a = round(random.uniform(0,360),3)
+        m1 = float(sin(a*PI/180))-math.sin(a*PI/180)
+        if m1<=0.001:
+            count_sin =count_sin + 1
+        num_test = num_test + 1
+        n1 = round(count_sin/10,2)
+    #print(n1)
+    return n1
+```
+输出sin误差
+```python
+var_sin_result = tk.StringVar()
+l_sin = tk.Label(window,width=15, height=2,
+                 textvariable=var_sin_result,
+                 font=(12),bg="gray")
+l_sin.place(x=150, y=90)
+```
