@@ -5,10 +5,12 @@
 ### 界面
 * （1）点击界面的options按钮下拉隐藏的工具，包含Python Language、C++ Language和Exit选项，可对后台执行三角函数计算采用的编辑语言进行选择或执行系统退出操作。
 * （2）界面有个输入框，输入角度来计算三角函数的值（程序中会把角度自动转换为弧度来计算）。  
-![image](https://github.com/yangyuxue-cqu/se2020/blob/master/math/tu1.png)
+![image](math/tu1.png)
 * （3）点击界面sin，cos，tan，cot按钮，可分别计算输入变量的正弦值，余弦值，正切值和余切值。
 * （4）点击界面的清除按钮，可清除在界面窗口执行的操作；点击退出按钮，可直接退出整个界面。  
 ![image](https://github.com/yangyuxue-cqu/se2020/blob/master/math/tu3.png)
+* （5）点击界面的右边的sin_error，cos-error,tan-error,cot-error即可分别自动输入1000次数据并计算误差。
+![image](math/tu4.png)
 
 
 ### 代码
