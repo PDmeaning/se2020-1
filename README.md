@@ -3,7 +3,7 @@
 编写软件：python、c++
 --
 ### 界面
-* （1）点击界面的options按钮下拉隐藏的工具，包含Python Language、C++ Language和Exit选项，可对后台执行三角函数计算采用的编辑语言进行选择或执行系统退出操作。
+* （1）点击界面的options按钮下拉隐藏的工具，包含Python Language、C++ Language和Exit选项，可对后台执行三角函数计算采用的编辑语言进行选择或执行系统退出操作,新增显示当前使用语言的功能。
 ![image](math/tu3.png)
 * （2）界面有个输入框，输入角度来计算三角函数的值（程序中会把角度自动转换为弧度来计算）。  
 * （3）点击界面sin，cos，tan，cot按钮，可分别计算输入变量的正弦值，余弦值，正切值和余切值。
@@ -188,7 +188,8 @@ DLL_EXPORT double c_cot(double x)
 }
 ```
 
-* 计算三角函数的误差（以sin函数为例）
+* 计算三角函数的误差（以sin函数为例，具体位于代码注释）
+
 sin误差计算
 ```python
 def test_sin():
@@ -204,10 +205,27 @@ def test_sin():
     #print(n1)
     return n1
 ```
-输出sin误差
+输出sin误差结果
+```python
+def snow_test_sin():
+    if flag:
+        result = round(100,2)
+    else:
+        result = test_sin()
+    var_error_sin.set("%.2f%%" % result)
+```
 ```python
 var_error_sin = tk.StringVar()
 l_error_sin = tk.Label(window,width=12, height=2,
                  textvariable=var_error_sin,font=(12),bg="gray")
 l_error_sin.place(x=480, y=90)
 ```
+
+# ChangeLog
+  **2020年5月4日**
+-    README说明文件更新
+
+  **2020年5月3日**
+-    上传界面文件（V2.0)
+-    上传测试文件（python与C++语言）
+
