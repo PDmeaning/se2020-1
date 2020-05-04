@@ -206,9 +206,8 @@ def test_sin():
 ```
 输出sin误差
 ```python
-var_sin_result = tk.StringVar()
-l_sin = tk.Label(window,width=15, height=2,
-                 textvariable=var_sin_result,
-                 font=(12),bg="gray")
-l_sin.place(x=150, y=90)
+var_error_sin = tk.StringVar()
+l_error_sin = tk.Label(window,width=12, height=2,
+                 textvariable=var_error_sin,font=(12),bg="gray")
+l_error_sin.place(x=480, y=90)
 ```
