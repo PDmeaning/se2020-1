@@ -1,5 +1,5 @@
 # se2020
-三角函数软件工程项目
+三角函数软件工程项目(test分支)
 编写软件：python、c++
 --
 ### 界面
@@ -18,27 +18,25 @@
 * （2）SnowC.dll是上述两个文件编译生成的Windows动态链接库文件，供python加载后调用c++方法来计算三角函数。
 * （3）pySnow.py包括用python语言实现cos、cot、sin和tan函数。
 * （4）main.py主要实现了三角函数运算界面（v1.0）显示（python语言），导入pySnow来执行python实现的三角函数，加载SnowC.dll调用C++语言实现的三角函数。
-* （5）test.py（python语言）与tset.cpp（C++语言）主要实现了输入1000次数据，并与正确数据比较计算误差数据的功能。
+* （5）test.py（python语言）与tset.cpp（C++语言）主要实现了输入1000次数据，并与正确数据比较计算误差数据的功能。其中C++测试模块通过动态加载上一组同学生成的动态链接模块所计算的值与系统三角函数进行比较,测试模块通过调用mydll.dll计算三角函数值后与系统函数比较。
 * （6）testmain.py主要实现了三角函数运算测试与原三角函数计算函数的界面(v2.0)显示（python语言）。
 ### 后台
 * 界面尺寸、标题
-         
-             ```python
-         window = tk.Tk()
-         window.title("trigonometric function")
-         window.geometry("480x400")
-             ```
+      ```python   
+      python window = tk.Tk()
+      window.title("trigonometric function")
+      window.geometry("480x400")
+      ```
          
 * 输入变量
          
-          ```python
-e.get()   
-          ```
+      ```python
+      e.get()   
+      ```
          三角函数值输出
-
-         ```python
-         t.insert("end", result)
-         ```
+      ```python
+      t.insert("end", result)
+      ```
          
 * 界面按钮，例如
      
