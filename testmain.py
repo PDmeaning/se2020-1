@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import messagebox
 import ctypes
 from ctypes import *
@@ -228,3 +228,5 @@ l_error_cot.place(x=480, y=270)
 
 
 window.mainloop()
+
+input()
